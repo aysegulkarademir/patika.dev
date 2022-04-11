@@ -23,3 +23,6 @@ replacement_cost = (SELECT  MIN(replacement_cost) FROM film);
 
 --4.
 
+SELECT * FROM payment
+LEFT JOIN customer ON customer.customer_id = payment.customer_id
+WHERE amount = (SELECT MAX(amount) FROM payment);
